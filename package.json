@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "hello-world-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Workers project",
+  "main": "index.js",
+  "scripts": {
+    "start": "wrangler dev",
+    "test": "mocha",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "Kotaimen <kotaimen.c@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^8.2.1",
+    "prettier": "^1.18.2",
+    "supertest": "^6.0.1"
+  }
+}

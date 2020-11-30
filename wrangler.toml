@@ -1,0 +1,18 @@
+name = "hello-world-dev"
+type = "javascript"
+account_id = "5cade3701288f69f9cead5dd4cc8ff17"
+zone_id = "4698737315f3c9c42ca775c792081fd2"
+vars = { ENVIRONMENT = "DEV" }
+workers_dev = true
+
+[env.staging]
+name = "hello-world-staging"
+vars = { ENVIRONMENT = "STAGING" }
+route = "petstore-dev.froststars.net/helloworld*"
+
+[env.prod]
+name = "hello-world-production"
+vars = { ENVIRONMENT = "PROD" }
+routes = [
+    "petstore.froststars.net/helloworld*"
+]
