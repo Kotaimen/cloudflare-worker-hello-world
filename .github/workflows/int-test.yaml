@@ -1,0 +1,34 @@
+name: Wrangler Test CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    env:
+      CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14.x'
+      - name: Install
+        run: |
+          npm install -g @cloudflare/wrangler
+          npm ci
+      - name: Wrangler build
+        run: |
+          wrangler whoami
+          wrangler build
+      - name: Test
+        run: |
+          wrangler start &
+          npm test
