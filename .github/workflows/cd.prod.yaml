@@ -2,8 +2,7 @@ name: Wrangler Deploy to Production
 
 on:
   push:
-    branches-ignore: [ '!master' ]
-    tags: ['v*']
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
 
 jobs:
 
@@ -19,4 +18,3 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           environment: 'prod'
-
