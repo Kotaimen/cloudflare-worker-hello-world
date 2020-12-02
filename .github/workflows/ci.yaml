@@ -13,7 +13,7 @@ jobs:
 
   build-and-test:
 
-    name: Build&Test
+    name: Build & Test
     runs-on: ubuntu-latest
 
     steps:
@@ -43,7 +43,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Deploy
+      - name: Deploy to Staging
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
